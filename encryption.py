@@ -18,14 +18,12 @@ def encryption(s: str):
     l = len(s)
     c = math.ceil(l ** (0.5))
     
-    ans = ''
+    ans = []
     for i in range(c):
-        c_i = ''
-        for j in range(i, l, c):
-            c_i += s[j]
-        ans += c_i + ' '
+        col = [s[j] for j in range(i, l, c)] 
+        ans.append(''.join(col))
     
-    return ans[:len(ans)-1]
+    return ' '.join(ans)
 
 
 if __name__ == '__main__':
